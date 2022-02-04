@@ -38,6 +38,7 @@ namespace ATI.Services.Common.Swagger
                 {
                     c.SwaggerDoc(tag, new OpenApiInfo { Title = $"{swaggerOptions.ServiceName} {tag} API", 
                         Version = swaggerOptions.Version });
+                    c.UseAllOfToExtendReferenceSchemas();
                 }
 
                 foreach (var securityHeader in swaggerOptions.SecurityApiKeyHeaders)
